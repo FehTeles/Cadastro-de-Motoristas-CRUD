@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Motoristas</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body onload="lerTudo(); CPF(); DataMask()">
+    <div class="container">
+        <div class="background">
+            <form class="create_form">
+                <label>ADICIONAR UM MOTORISTA:</label><BR>
+                <input type="text" class="nome" name="nome" placeholder="Nome"/>
+                <input type="email" class="email" name="email" placeholder="Email"/>
+                <input type="text" class="cpf" id="cpf" maxlength="14" placeholder="CPF 000.000.000-00">
+                <input type="text" class="dataNasc" id="data" maxlength="10" name="dataNasc" placeholder="Data de Nascimento D/M/A"/>
+                <button type="button" onclick="verifvalores()">Cadastrar</button>
+            </form>
+            <form class="update_form">
+                <input type="text" hidden class="id"/>
+                <input type="text" class = "unome"/>
+                <input type="email" class ="uemail"/>
+                <input type="text" class ="ucpf">
+                <input type="text" class="udataNasc"/>
+                <button type="button">Atualizar</button>
+            </form>
+
+            <table style="text-align: center;">
+                <thead>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                    <th>CPF</th>
+                    <th>Data de Nascimento</th>
+                </thead>
+                <tbody class="table_data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
+
+
+
