@@ -6,7 +6,7 @@
     <title>Cadastro de Motoristas</title>
     <link rel="stylesheet" href="./index.css">
 </head>
-<body onload="lerTudo(); CPF(); DataMask()">
+<body onload="lerTudo(); CPF(); DataMask(); PlacaMask();">
     <div class="container">
         <div class="background">
             <form class="create_form">
@@ -15,15 +15,23 @@
                 <input type="email" class="email" name="email" placeholder="Email"/>
                 <input type="text" class="cpf" id="cpf" maxlength="14" placeholder="CPF 000.000.000-00">
                 <input type="text" class="dataNasc" id="data" maxlength="10" name="dataNasc" placeholder="Data de Nascimento D/M/A"/>
+                <input class="placa" id="placa" placeholder="Placa ABC-1D23" />
+                <input class="modelo" placeholder="Modelo do Carro" />
+                <input class="cor" placeholder="Cor" />
                 <button type="button" onclick="verifvalores()">Cadastrar</button>
             </form>
             <form class="update_form">
+                <label>ATUALIZAR UM MOTORISTA:</label><BR>
                 <input type="text" hidden class="id"/>
                 <input type="text" class = "unome"/>
                 <input type="email" class ="uemail"/>
                 <input type="text" class ="ucpf">
                 <input type="text" class="udataNasc"/>
-                <button type="button">Atualizar</button>
+                <input class="uplaca" id="uplaca" placeholder="Placa ABC-1D23" />
+                <input class="umodelo" placeholder="Modelo do Carro" />
+                <input class="ucor" placeholder="Cor" />
+                <button type="button" onclick="atualizar()">Atualizar</button>
+                <button type="button" onclick="cancelar()">Cancelar</button>
             </form>
 
             <table style="text-align: center;">
@@ -32,6 +40,10 @@
                     <th>E-Mail</th>
                     <th>CPF</th>
                     <th>Data de Nascimento</th>
+                    <th>Placa</th>
+                    <th>Modelo do Carro</th>
+                    <th>Cor</th>
+                    <th>Ações</th>
                 </thead>
                 <tbody class="table_data">
 
