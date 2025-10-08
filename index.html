@@ -1,59 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Motoristas</title>
-    <link rel="stylesheet" href="./index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Motoristas</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body onload="lerTudo(); CPF(); DataMask(); PlacaMask();">
+  <div class="background">
     <div class="container">
-        <div class="background">
-            <form class="create_form">
-                <label>ADICIONAR UM MOTORISTA:</label><BR>
-                <input type="text" class="nome" name="nome" placeholder="Nome"/>
-                <input type="email" class="email" name="email" placeholder="Email"/>
-                <input type="text" class="cpf" id="cpf" maxlength="14" placeholder="CPF 000.000.000-00">
-                <input type="text" class="dataNasc" id="data" maxlength="10" name="dataNasc" placeholder="Data de Nascimento D/M/A"/>
-                <input class="placa" id="placa" placeholder="Placa ABC-1D23" />
-                <input class="modelo" placeholder="Modelo do Carro" />
-                <input class="cor" placeholder="Cor" />
-                <button type="button" onclick="verifvalores()">Cadastrar</button>
-            </form>
-            <form class="update_form">
-                <label>ATUALIZAR UM MOTORISTA:</label><BR>
-                <input type="text" hidden class="id"/>
-                <input type="text" class = "unome"/>
-                <input type="email" class ="uemail"/>
-                <input type="text" class ="ucpf">
-                <input type="text" class="udataNasc"/>
-                <input class="uplaca" id="uplaca" placeholder="Placa ABC-1D23" />
-                <input class="umodelo" placeholder="Modelo do Carro" />
-                <input class="ucor" placeholder="Cor" />
-                <button type="button" onclick="atualizar()">Atualizar</button>
-                <button type="button" onclick="cancelar()">Cancelar</button>
-            </form>
+      <h1>Cadastro de Motoristas</h1>
 
-            <table style="text-align: center;">
-                <thead>
-                    <th>Name</th>
-                    <th>E-Mail</th>
-                    <th>CPF</th>
-                    <th>Data de Nascimento</th>
-                    <th>Placa</th>
-                    <th>Modelo do Carro</th>
-                    <th>Cor</th>
-                    <th>Ações</th>
-                </thead>
-                <tbody class="table_data">
-
-                </tbody>
-            </table>
+      <form class="create_form">
+        <h2>Adicionar Motorista</h2>
+        <input type="text" class="nome" name="nome" placeholder="Nome"/>
+        <input type="email" class="email" name="email" placeholder="Email"/>
+        <input type="text" class="cpf" id="cpf" maxlength="14" placeholder="CPF 000.000.000-00"/>
+        <input type="text" class="dataNasc" id="data" maxlength="10" name="dataNasc" placeholder="Data de Nascimento D/M/A"/>
+        <input class="placa" id="placa" placeholder="Placa ABC-1D23"/>
+        <input class="modelo" placeholder="Modelo do Carro"/>
+        <div style="display: flex; gap: 15px; width: 100%;">
+          <input class="cor" placeholder="Cor"/>
+          <button type="button" onclick="verifvalores()">Cadastrar</button>
         </div>
+      </form>
+
+      <form class="update_form">
+        <h2>Atualizar Motorista</h2>
+        <input type="text" hidden class="id"/>
+        <input type="text" class="unome" placeholder="Nome"/>
+        <input type="email" class="uemail" placeholder="Email"/>
+        <input type="text" class="ucpf" placeholder="CPF 000.000.000-00"/>
+        <input type="text" class="udataNasc" placeholder="Data de Nascimento D/M/A"/>
+        <input class="uplaca" id="uplaca" placeholder="Placa ABC-1D23"/>
+        <input class="umodelo" placeholder="Modelo do Carro"/>
+        <div style="display: flex; gap: 15px; width: 100%;">
+          <input class="ucor" placeholder="Cor"/>
+          <div class="btn-group" style="display: flex; gap: 10px;">
+            <button type="button" onclick="atualizar()">Atualizar</button>
+            <button type="button" class="cancel" onclick="cancelar()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+
+      <h2>Lista de Motoristas</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>CPF</th>
+              <th>Data de Nascimento</th>
+              <th>Placa</th>
+              <th>Modelo do Carro</th>
+              <th>Cor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody class="table_data"></tbody>
+        </table>
+      </div>
     </div>
-    <script src="./index.js"></script>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
-
-
-

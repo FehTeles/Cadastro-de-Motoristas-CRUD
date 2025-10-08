@@ -150,9 +150,9 @@ function lerTudo(){
     tableData.innerHTML = elements;
 }
 
-function edit(id){
+function edit(id) {
   document.querySelector('.create_form').style.display = "none";
-  document.querySelector('.update_form').style.display = "block";
+  document.querySelector('.update_form').style.display = "grid";
   var object = data.find(obj => obj.id === id)
 
   document.querySelector(".id").value = object.id;
@@ -182,7 +182,7 @@ function atualizar(){
   } 
   data[index] = {id, nome, email, cpf, dataNasc, placa, modelo, cor};
   document.querySelector('.update_form').style.display = "none";
-  document.querySelector('.create_form').style.display = "block";
+  document.querySelector('.create_form').style.display = "grid";
   lerTudo();
 }
 
@@ -223,7 +223,7 @@ function PlacaMask() {
     });
 }
 
-function cancelar(){
-    document.querySelector('.update_form').style.display = "none";
-    document.querySelector('.create_form').style.display = "block";
+function cancelar() {
+  document.querySelector('.update_form').style.display = "none";
+  document.querySelector('.create_form').style.display = "grid";
 }

@@ -1,74 +1,209 @@
-.container {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background-color: rgb(33, 85, 131);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-.form_container {
-    margin-top: 20px;
-    width: 40vw;
-    border-radius: 10px;
-    height: 80vh;
-    padding: 10px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid gray;
-}
-
-form button {
-    padding: 10px;
-    background-color: green;
-    color: white;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-form button:active {
-    background-color: rgb(1, 77, 1);
-}
-
-table {
-    width: 100%;
-    margin-top: 20px;
+body {
+  background: linear-gradient(120deg, #e9f0ff, #cfe0ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .update_form{
     display: none;
 }
 
-.background{
-    background-color: white;
-    padding: 10px; 
-    margin: 2%;
-    border-radius: 8px;
+.update_form > div {
+  display: flex;
+  gap: 15px;
+  width: 100%;
 }
 
-.update_button{
-    padding: 5px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 7px;
-    cursor: pointer;
-}
-.update_button:active {
-    background-color: rgb(134, 134, 134);
+.update_form input.ucor {
+  flex: 1 1 80%;
 }
 
-.delete_button{
-    padding: 5px;
-    background-color: rgb(209, 1, 1);
-    color: white;
-    border-radius: 7px;
-    cursor: pointer;
+.update_form .btn-group {
+  flex: 0 0 120px;
+  display: flex;
+  gap: 10px;
 }
-.delete_button:active{
-    background-color: rgb(128, 4, 4);
+
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.side-image {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  border-radius: 20px;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.container {
+  background: white;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  max-width: 900px;
+  width: 90%;
+}
+
+.container h1 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #2a4b9b;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+form h2 {
+  width: 100%;
+  color: #3455db;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+input,
+input.cor,
+input.ucor {
+  flex: 1 1 45%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #3455db;
+  box-shadow: 0 0 4px rgba(52, 85, 219, 0.4);
+  outline: none;
+}
+
+button {
+  background-color: #3455db;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #2239a5;
+}
+
+button.cancel {
+  background-color: #aaa;
+}
+
+button.cancel:hover {
+  background-color: #888;
+}
+
+.create_form,
+.update_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.create_form h2,
+.update_form h2 {
+  grid-column: 1 / -1;
+}
+
+.create_form > div,
+.update_form > div {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.create_form input.cor,
+.update_form input.ucor {
+  flex: 1 1 80%;
+}
+
+.create_form button,
+.update_form .btn-group {
+  flex: 0 0 120px;
+  display: flex;
+  gap: 10px;
+  height: 44px;
+}
+
+.update_form{
+    display: none;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 10px;
+}
+
+thead {
+  background-color: #3455db;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  input {
+    flex: 1 1 100%;
+  }
+
+  .side-image {
+    display: none;
+  }
 }
