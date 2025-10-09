@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Motoristas</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="css\styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/icon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body onload="lerTudo(); CPF(); DataMask(); PlacaMask();">
+  <header class="main-header">
+    <div class="header-content">
+      <button class="logo-btn" onclick="window.location.reload();" style="background: none; border: none; padding: 0; cursor: pointer;">
+        <img src="images/logo.png" alt="Logo" class="logo">
+      </button>
+      <h1 class="header-title">Lorem Ipsum</h1>
+    </div>
+  </header>
   <div class="background">
     <div class="container">
       <h1>Cadastro de Motoristas</h1>
-
       <form class="create_form">
         <h2>Adicionar Motorista</h2>
         <input type="text" class="nome" name="nome" placeholder="Nome"/>
         <input type="email" class="email" name="email" placeholder="Email"/>
-        <input type="text" class="cpf" id="cpf" maxlength="14" placeholder="CPF 000.000.000-00"/>
-        <input type="text" class="dataNasc" id="data" maxlength="10" name="dataNasc" placeholder="Data de Nascimento D/M/A"/>
-        <input class="placa" id="placa" placeholder="Placa ABC-1D23"/>
-        <input class="modelo" placeholder="Modelo do Carro"/>
-        <div style="display: flex; gap: 15px; width: 100%;">
-          <input class="cor" placeholder="Cor"/>
+        <input type="text" id="id_cpf" class="cpf" maxlength="14" placeholder="CPF 000.000.000-00"/>
+        <input type="text" id="id_data" class="dataNasc" maxlength="10" name="dataNasc" placeholder="Data de Nascimento D/M/A"/>
+        <input type="text" id="id_placa" class="placa" placeholder="Placa ABC-1D23"/>
+        <input type="text" class="modelo" placeholder="Modelo do Carro"/>
+        <div class="btn-group" style="display: flex; gap: 10px;">
           <button type="button" onclick="verifvalores()">Cadastrar</button>
         </div>
       </form>
@@ -31,16 +38,13 @@
         <input type="text" hidden class="id"/>
         <input type="text" class="unome" placeholder="Nome"/>
         <input type="email" class="uemail" placeholder="Email"/>
-        <input type="text" class="ucpf" placeholder="CPF 000.000.000-00"/>
-        <input type="text" class="udataNasc" placeholder="Data de Nascimento D/M/A"/>
-        <input class="uplaca" id="uplaca" placeholder="Placa ABC-1D23"/>
-        <input class="umodelo" placeholder="Modelo do Carro"/>
-        <div style="display: flex; gap: 15px; width: 100%;">
-          <input class="ucor" placeholder="Cor"/>
-          <div class="btn-group" style="display: flex; gap: 10px;">
-            <button type="button" onclick="atualizar()">Atualizar</button>
-            <button type="button" class="cancel" onclick="cancelar()">Cancelar</button>
-          </div>
+        <input type="text" id="id_cpf" class="ucpf" placeholder="CPF 000.000.000-00"/>
+        <input type="text" id="id_dataNasc" class="udataNasc" placeholder="Data de Nascimento D/M/A"/>
+        <input type="text" id="id_placa" class="uplaca" placeholder="Placa ABC-1D23"/>
+        <input type="text" class="umodelo" placeholder="Modelo do Carro"/>
+        <div class="btn-group" style="display: flex; gap: 10px;">
+          <button type="button" onclick="atualizar()">Atualizar</button>
+          <button type="button" class="cancel" onclick="cancelar()">Cancelar</button>
         </div>
       </form>
 
@@ -55,7 +59,6 @@
               <th>Data de Nascimento</th>
               <th>Placa</th>
               <th>Modelo do Carro</th>
-              <th>Cor</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -65,6 +68,19 @@
     </div>
   </div>
 
-  <script src="index.js"></script>
+  <script src="js\script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+  <script>
+    $('#id_cpf').mask('000.000.000-00');
+    $('#id_data').mask('00/00/0000');
+    $('#id_placa').mask('AAA-0A00');
+  </script>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <span>&copy; 2025 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+    </div>
+  </footer>
 </body>
 </html>
