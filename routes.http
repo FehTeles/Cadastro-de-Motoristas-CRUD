@@ -1,0 +1,31 @@
+POST http://localhost:3000/motoristas
+Content-Type: application/json
+Accept-Language: pt-BR
+
+{
+  "nome": "João",
+  "email": "joao@example.com",
+  "cpf": "123.456.789-00",
+  "dataNasc": "1990-01-01",
+  "placa": "ABC-1234",
+  "modelo": "Fiat Uno"
+}
+
+###
+
+GET http://localhost:3000/motoristas
+
+###
+
+PUT http://localhost:3000/motoristas
+Content-Type: application/json
+Accept-Language: pt-BR
+
+{
+  "nome": "felipe",
+  "email": "felipe@example.com",
+  "cpf": "123.456.789-00",
+  "dataNasc": "1990-01-01",
+  "placa": "ABC-1234",
+  "modelo": "Chevrolett Preto"
+}
